@@ -12,4 +12,8 @@ app.use(express.json({limit:"20kb"}));
 app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
 app.use(cookieParser());
+
+//routes
+import eventrouter from "./routes/Events.routes.js";
+app.get("/api/v1/event",eventrouter);
 export default app;

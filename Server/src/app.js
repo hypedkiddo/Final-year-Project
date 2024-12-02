@@ -13,7 +13,10 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
 app.use(cookieParser());
 
-//routes
-import eventrouter from "./routes/Events.routes.js";
-app.get("/api/v1/event",eventrouter);
+//Register and Login  a user
+import userRouter from "./routes/User.routes.js"
+app.use("/api/v1/users",userRouter);
+
+//Handling CRUD operations on Event 
+
 export default app;

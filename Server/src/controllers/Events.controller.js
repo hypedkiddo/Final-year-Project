@@ -7,7 +7,6 @@ import {Event} from "../models/event.models.js";
 const showlistings=asyncHandler(async(req,res)=>{
     const data= await Event.find({});
     console.log(data);
-    console.log("This is new branch")
 })
 
 export {showlistings};

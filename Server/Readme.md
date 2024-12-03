@@ -6,5 +6,5 @@
 
 # Logout User --> http://localhost:8080/api/v1/users/logout
 
-#CRUD operations on user
+#CRUD operations on Event
 

@@ -23,14 +23,14 @@ const createlistings=asyncHandler(async(req,res)=>{
     }    
     const eventImageLocalPath=req.files?.image[0]?.path;
     //upload it in cloudinary
-    const eventimageurl=uploadOnCloudinary(eventImageLocalPath);
+    const eventimageurl=await uploadOnCloudinary(eventImageLocalPath);
     if(!eventimageurl){
         throw new ApiError(500,"Something went wrong while uploading image to cloudinary")
     }
     const newevent= await Event.create({
         title,
         description,
-        image:eventimageurl,
+        image:eventimageurl.url,
         price,
         location 
     })

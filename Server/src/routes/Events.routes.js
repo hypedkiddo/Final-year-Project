@@ -13,7 +13,7 @@ router.route("/create").post(
             maxCount:1
 
         }
-    ]),verifyadmin,createlistings)
+    ]),createlistings)
 //Update Event    
 router.route("/update/:id").put(
         upload.fields([
@@ -22,9 +22,9 @@ router.route("/update/:id").put(
                 maxCount:1
     
             }
-        ]),verifyadmin,updatelistings)
+        ]),updatelistings)
 //Delete Event        
-router.delete("/delete/:id").post(verifyadmin,deletelistings);
+router.route("/delete/:id").delete(deletelistings);
 
 export default router;
 

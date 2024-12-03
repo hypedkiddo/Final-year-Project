@@ -6,7 +6,7 @@ const eventSchema=Schema({
         unique:true,
         index:true
     },
-    desciption:{
+    description:{
         type:String
     },
     image:{
